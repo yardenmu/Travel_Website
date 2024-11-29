@@ -16,3 +16,7 @@ Welcome to the **Travel Recommendation Website**! This is a web-based applicatio
 
 ## Database Setup 🗄️
 The project uses a MySQL database to store and retrieve travel destinations. The database is populated with information about various countries and recommendations. You can import the database with the provided .sql dump file.
+
+## Project Demo 🎬
+
+Click [here](https://drive.google.com/file/d/1Ev0lIMhop-H85JQs1E9_0h1iZCyDYr6M/view?usp=sharing) to watch the project demo video!
