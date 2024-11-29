@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation App</title>
+    <link href="/style.css" rel="stylesheet"/>
+    <link href="/mediaQuery.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/29dbc431ad.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo"><i class="fa-solid fa-earth-americas"></i>Recco<span class="trip">Trip</span></div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="navbar-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#recommendation">Recommendation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <div class="home-container">
+            <h1 class="home-title slide-in"><span class="discover-h1">DISCOVER</span> Your Next Adventure <br> with ReccoTrip</h1>
+            <p class="home-description slide-in">Explore breathtaking landscapes and vibrant cultures with
+                 ReccoTrip's tailored travel recommendations.
+            </p>
+            <button class="learn-btn slide-in" onclick="goToAbout()">Learn More<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </section>
+    <section id="about">
+        <div class="about-container">
+            <div class="about-info">
+                <h3>About Us</h3>
+                <h1>Your Personalized <span class="travel">Travel</span> Guide</h2>
+                <p>
+                    At ReccoTrip, we’re passionate about helping you discover the perfect travel destinations tailored just for you. Whether you're planning a relaxing beach vacation, an adventurous mountain getaway, or a cultural city exploration, we’re here to guide you every step of the way. Using details like your budget, preferred travel style, and seasonal preferences, we offer recommendations that match your unique travel desires. Let us help you uncover your next unforgettable journey.
+                </p>
+                <div class="feature-container">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa fa-map-marker-alt"></i></div>
+                        <div class="feature-title">Personalized Trips</div>
+                        <div class="feature-description">Recommendations just for you.</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa fa-wallet"></i></div>
+                        <div class="feature-title">Budget Friendly</div>
+                        <div class="feature-description">Plan trips within budget.</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa fa-globe"></i></div>
+                        <div class="feature-title">Seasonal Tips</div>
+                        <div class="feature-description">Travel smart for every season.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="picture-container">
+                <img class="about-picture" src="/images/about-picture-italy1.jpg" alt="picture of Cinque Terre, Italy"/>
+            </div>
+        </div>
+    </section>
+    <section id="recommendation">
+        <div class="reco-info">
+            <h1>Plan Your <span class="travel">Perfect</span> Trip</h1>
+            <p>Fill out the form below to receive personalized travel recommendations based on your preferences and budget!</p>
+        </div>
+        <div class="reco-container">
+            <form id="submitForm" method="POST">
+                <div>
+                    <label class="label" for="budget">Budget</label>
+                    <input type="text" id="budget" name="budget" placeholder="Enter your budget" required>
+                </div>
+                <div>
+                    <label class="label" for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div>
+                    <label class="label" for="duration">Trip Duration</label>
+                    <input type="number" min="0" id="duration" name="duration" required>
+                </div>
+                <div>
+                    <label class="label" for="tripType">Type of Trip</label>
+                    <select id="tripType" name="tripType">
+                        <option value="romantic">Romantic</option>
+                        <option value="family">Family</option>
+                        <option value="friends">Friends</option>
+                        <option value="solo">Solo</option>
+                        <option value="backpacking">Backpacking</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="adventure">Adventure</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="label" for="activityLevel">Activity Level</label>
+                    <select id="activityLevel" name="activityLevel">
+                        <option value="relaxed">Relaxed</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="adventurous">Adventurous</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="label" for="transport">Transport</label>
+                    <select id="transport" name="transport">
+                        <option value="public-transport">Public Transport</option>
+                        <option value=" car-rental"> Car Rental</option>
+                        <option value="walking">Walking</option>
+                        <option value="cycling">Cycling</option>
+                    </select>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="gallery-container">
+            <button class="prev" onclick="moveSlide(-1)">&#10094; Prev</button>
+            
+            <div class="gallery-slides">
+                <!-- Canada -->
+                <div class="slide destination-card">
+                    <div class="img-card">
+                        <img src="/images/canada.jpg" alt="Rocky Mountains in Canada">
+                        <span class="price">600$</span>
+                        <h3 class="country">Canada</h3>
+                    </div>
+                    <div class="info-card">
+                        <p>Discover breathtaking landscapes, vibrant cities, and outdoor adventures in the heart of nature.</p>
+                        <button>Learn More</button>
+                    </div>
+                </div>
+                
+                <!-- Greece -->
+                <div class="slide destination-card">
+                    <div class="img-card">
+                        <img src="/images/greece.jpg" alt="Greece's stunning coastlines">
+                        <span class="price">300$</span>
+                        <h3 class="country">Greece</h3>
+                    </div>
+                    <div class="info-card">
+                        <p>Discover the ancient ruins, beautiful islands, and Mediterranean charm of Greece.</p>
+                        <button>Learn More</button>
+                    </div>
+                </div>
+        
+                <!-- Thailand -->
+                <div class="slide destination-card">
+                    <div class="img-card">
+                        <img src="/images/thailand.jpg" alt="Scenic landscapes in Thailand">
+                        <span class="price">550$</span>
+                        <h3 class="country">Thailand</h3>
+                    </div>
+                    <div class="info-card">
+                        <p>Explore Thailand's exotic beaches, bustling cities, and tranquil temples.</p>
+                        <button>Learn More</button>
+                    </div>
+                </div>
+        
+                <!-- Austria -->
+                <div class="slide destination-card">
+                    <div class="img-card">
+                        <img src="/images/austria.jpg" alt="The beautiful Austrian Alps">
+                        <span class="price">400$</span>
+                        <h3 class="country">Austria</h3>
+                    </div>
+                    <div class="info-card">
+                        <p>Experience the breathtaking Austrian Alps, with stunning mountain views, skiing resorts, and charming villages.</p>
+                        <button>Learn More</button>
+                    </div>
+                </div>
+        
+                <!-- Japan -->
+                <div class="slide destination-card">
+                    <div class="img-card">
+                        <img src="/images/japan.jpg" alt="Temples and nature in Japan">
+                        <span class="price">800$</span>
+                        <h3 class="country">Japan</h3>
+                    </div>
+                    <div class="info-card">
+                        <p>Immerse yourself in Japan's rich traditions, stunning landscapes, and vibrant cities.</p>
+                        <button>Learn More</button>
+                    </div>
+                </div>
+            </div>
+        
+            <button class="next" onclick="moveSlide(1)">Next &#10095;</button>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact-container">
+            <div class="section-container">
+                <div class="logo"><i class="fa-solid fa-earth-americas"></i>Recco<span class="trip">Trip</span></div>
+                <p>Your perfect destination is just a click away. We’ll find it based on what you love.</p>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                
+            </div>
+            <div class="section-container">
+                <h2>Quick Links</h2>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#recommendation">Recommendation</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="section-container">
+                <h2>Contact Us</h2>
+                <i class="contact-icons fa-solid fa-phone"><p>(+972)541234567</p></i>
+                <i class="contact-icons fa-solid fa-envelope"><p>reccotrip@gmail.com</p></i>
+                <i class="contact-icons fa-solid fa-location-dot"><p>Tel-Aviv, Israel</p></i>
+            </div>
+        </div>
+    </section>
+    <footer>&#169; 2024 Yarden Mugany. All Rights Reserved</footer>
+    <!-- result page -->
+     <div id="result-container">
+        <div class="header-container">
+            <div class="square">
+                <span class="close-button" onclick="closeResult()">x</span>
+            </div>
+        </div>
+        <div id="cardsContainer"></div>
+     </div>
+    <script src="main.js"></script>
+</body>
+</html>
